@@ -24,7 +24,7 @@ function Slide19_Roadmap({ n, total }) {
     ], state:'next' },
   ];
   return (
-    <Slide n={n} total={total} section="19 · Дорожная карта" label="Дорожная карта">
+    <Slide n={n} total={total} section="20 · Дорожная карта" label="Дорожная карта">
       <div className="eyebrow">Четыре месяца до публичного beta-запуска</div>
       <h2 className="h2" style={{marginTop:10}}>Что делаем помесячно — с конкретикой</h2>
 
@@ -167,7 +167,7 @@ function Slide20_Team({ n, total }) {
     { i:'ИМ', n:'Ибрагимов Марат Шамилевич', r:'Chief Team Manager', e:'Менеджмент команды, операционная эффективность, координация этапов и дорожной карты.', area:'Ops · Delivery' },
   ];
   return (
-    <Slide n={n} total={total} section="20 · Команда" label="Команда">
+    <Slide n={n} total={total} section="21 · Команда" label="Команда">
       <div className="eyebrow">Team_Bobs · межфакультетская команда ИТМО</div>
       <h2 className="h2" style={{marginTop:10}}>Три человека с разных направлений</h2>
 
@@ -198,13 +198,13 @@ function Slide20_Team({ n, total }) {
 
 function Slide21_Contacts({ n, total }) {
   return (
-    <Slide n={n} total={total} section="21 · Контакты" label="Контакты">
+    <Slide n={n} total={total} section="22 · Контакты" label="Контакты">
       <div className="eyebrow">На связи</div>
       <h2 className="h2" style={{marginTop:10}}>Как связаться с командой</h2>
 
       <div style={{display:'grid',gridTemplateColumns:'1.4fr 1fr',gap:40,marginTop:40,flex:1}}>
         <div style={{display:'flex',flexDirection:'column',gap:16}}>
-          <div className="card" style={{padding:24,display:'grid',gridTemplateColumns:'52px 1fr auto',gap:18,alignItems:'center'}}>
+          <div className="card" style={{padding:24,display:'grid',gridTemplateColumns:'52px 1fr',gap:18,alignItems:'center'}}>
             <div style={{width:52,height:52,borderRadius:12,background:'linear-gradient(135deg,#2AABEE,#229ED9)',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center'}}>
               <Icon name="Send" size={22} stroke="#fff"/>
             </div>
@@ -213,7 +213,6 @@ function Slide21_Contacts({ n, total }) {
               <div className="h3" style={{fontSize:22,marginTop:2}}>@athebyme</div>
               <div style={{fontSize:13,color:'var(--muted)',marginTop:4}}>Брюхов Антон · Chief Marketing Specialist</div>
             </div>
-            <QR data="https://t.me/athebyme" label="t.me/athebyme" size={110}/>
           </div>
 
           <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
@@ -275,7 +274,7 @@ function Slide21_Contacts({ n, total }) {
 
 function Slide22_UnitEcon({ n, total }) {
   return (
-    <Slide n={n} total={total} section="22 · Юнит-экономика" label="Unit Economics">
+    <Slide n={n} total={total} section="16 · Юнит-экономика" label="Unit Economics">
       <div className="eyebrow">Каждая цифра — с обоснованием</div>
       <h2 className="h2" style={{marginTop:10}}>Экономика одного клиента — B2B и B2C</h2>
 
@@ -345,7 +344,7 @@ function Slide22_UnitEcon({ n, total }) {
         <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
           <div style={{color:'var(--teal)',flexShrink:0,marginTop:2}}><Icon name="Info" size={16} stroke="#007575"/></div>
           <div style={{fontSize:12.5,lineHeight:1.6,color:'var(--ink)'}}>
-            <b>Disclaimer.</b> Оценки основаны на публичных ценах Cloud.ru / Yandex Cloud на апрель 2026 <Cite n={[17,19]}/> и бенчмарках SaaS B2B. Курс 95 ₽/$. Чувствительность пересчитывается в Google Sheets-модели <span className="font-mono" style={{color:'var(--teal)'}}>(QR слайд 16)</span>.
+            <b>Disclaimer.</b> Оценки основаны на публичных ценах Cloud.ru / Yandex Cloud на апрель 2026 <Cite n={[17,19]}/> и бенчмарках SaaS B2B. Курс 95 ₽/$. Чувствительность пересчитывается в Google Sheets-модели <span className="font-mono" style={{color:'var(--teal)'}}>(QR слайд 17)</span>.
           </div>
         </div>
       </div>

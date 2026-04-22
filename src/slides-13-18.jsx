@@ -68,7 +68,7 @@ function Slide14_PEST({ n, total }) {
           <div className="eyebrow">Макросреда — каждый фактор с источником</div>
           <h2 className="h2" style={{marginTop:10}}>PEST-сокращённый: что влияет, как и насколько</h2>
         </div>
-        <QR data="https://docs.google.com/presentation/d/1UpVfl0ojrlqaAQmeuaDpp56JrSqOgUw4AkMYpWci6Io/edit?slide=id.g3cb133892f9_0_28#slide=id.g3cb133892f9_0_28" label="Полный PEST-анализ — презентация проекта" size={128}/>
+        <QR data="https://docs.google.com/presentation/d/1UpVfl0ojrlqaAQmeuaDpp56JrSqOgUw4AkMYpWci6Io/edit" label="Полный PEST-анализ — презентация проекта" size={128}/>
       </div>
 
       <div style={{marginTop:30,border:'1px solid var(--line)',borderRadius:14,overflow:'hidden'}}>
@@ -188,7 +188,7 @@ function Slide16_Finance({ n, total }) {
     { label:'Оптимистичный', price:95, users:820, acq:55, color:'#00A8A8' },
   ];
   return (
-    <Slide n={n} total={total} section="16 · Финансы" label="Финансовая модель">
+    <Slide n={n} total={total} section="17 · Финансы" label="Финансовая модель">
       <div style={{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:40}}>
         <div>
           <div className="eyebrow">Три сценария точки безубыточности · в рублях (USD в скобках)</div>
@@ -258,7 +258,7 @@ function Slide17_Risks({ n, total }) {
     { id:'R4', t:'Сбои инфры', p:0.2, i:0.7, score:0.14, cons:'Даунтайм облака, потеря клиентских проектов', meas:'SLA с провайдером · мульти-регион · регулярные бэкапы', level:'low' },
   ];
   return (
-    <Slide n={n} total={total} section="17 · Риски" label="Анализ рисков">
+    <Slide n={n} total={total} section="18 · Риски" label="Анализ рисков">
       <div className="eyebrow">Топ-4 риска · вероятность × влияние</div>
       <h2 className="h2" style={{marginTop:10}}>Реестр рисков и карта 3×3</h2>
 
@@ -341,7 +341,7 @@ function Slide18_Investments({ n, total }) {
     { t:'Private investors · Pre-seed', a:'10–25 млн ₽ ($105k–$265k)', d:'Ангельский раунд для покрытия первых 6 мес операционки и MVP-пилотов.', i:'Users' },
   ];
   return (
-    <Slide n={n} total={total} section="18 · Инвестиции" label="Инвестиции">
+    <Slide n={n} total={total} section="19 · Инвестиции" label="Инвестиции">
       <div className="eyebrow">Сколько, на что и откуда</div>
       <h2 className="h2" style={{marginTop:10}}>Потребность: 35 млн ₽ (~$370k) на 18 месяцев</h2>
 

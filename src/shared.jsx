@@ -124,13 +124,13 @@ const SLIDE_TITLES = [
   { t: 'Матрица стратегий', s: 'Strategy' },
   { t: 'PEST-анализ', s: 'PEST' },
   { t: 'Бизнес-модель', s: 'Business Model' },
+  { t: 'Unit Economics', s: 'Unit Econ' },
   { t: 'Финансовая модель', s: 'Finance' },
   { t: 'Анализ рисков', s: 'Risk' },
   { t: 'Инвестиции', s: 'Investments' },
   { t: 'Дорожная карта', s: 'Roadmap' },
   { t: 'Команда', s: 'Team' },
   { t: 'Контакты', s: 'Contacts' },
-  { t: 'Unit Economics', s: 'Unit Econ' },
   { t: 'Источники', s: 'Sources' },
 ];
 

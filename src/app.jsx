@@ -3,8 +3,8 @@
 const SLIDES = [
   Slide01_Title, Slide02_Materials, Slide03_Novelty, Slide04_Problem, Slide05_Solution, Slide06_Segmentation,
   Slide07_Hypothesis, Slide08_Audience, Slide09_Market, Slide10_TAMSOM, Slide11_Competition, Slide12_SWOT,
-  Slide13_Strategy, Slide14_PEST, Slide15_BusinessModel, Slide16_Finance, Slide17_Risks, Slide18_Investments,
-  Slide19_Roadmap, Slide20_Team, Slide21_Contacts, Slide22_UnitEcon, Slide23_Sources,
+  Slide13_Strategy, Slide14_PEST, Slide15_BusinessModel, Slide22_UnitEcon, Slide16_Finance, Slide17_Risks,
+  Slide18_Investments, Slide19_Roadmap, Slide20_Team, Slide21_Contacts, Slide23_Sources,
 ];
 const TOTAL = SLIDES.length;
 

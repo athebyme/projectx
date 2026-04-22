@@ -3,14 +3,23 @@ const { AreaChart, Area, BarChart, Bar, LineChart, Line, XAxis, YAxis, Cartesian
 
 function Slide07_Hypothesis({ n, total }) {
   const rows = [
-    { h:'H1', txt:'Пользователи тратят чрезмерное время на ручной монтаж мультикамерного контента', method:'CustDev-интервью, N=18', result:'Среднее 38 ч на 1 ч материала · 16/18 назвали монтаж узким местом', status:'confirmed' },
-    { h:'H2', txt:'Пользователи готовы использовать автомонтаж при достаточном качестве (≥80% ручного)', method:'Опрос N=42 + демо MVP', result:'78% согласны использовать, если не нужно «доводить руками» больше 20%', status:'confirmed' },
-    { h:'H3', txt:'Блогеры и фрилансеры готовы платить 900–2 800 ₽/мес (≈ $10–30) за сокращение времени в 2×', method:'Price-test в интервью · Van Westendorp', result:'Оптимальная цена 1 490 ₽/мес ($16). WTP ≥ 900 ₽ у 71%', status:'confirmed' },
+    { h:'H1', txt:'Ручной мультикамерный монтаж — значимая боль рынка видеопродакшна',
+      method:'Desk research отраслевых бенчмарков + анализ вакансий hh.ru',
+      result:'30–60 мин монтажа на 1 мин готового видео; вакансии требуют 8–40 ч/проект',
+      refs:[1,12], status:'confirmed' },
+    { h:'H2', txt:'Индустрия быстро принимает AI-инструменты монтажа при достаточном качестве',
+      method:'Wyzowl State of Video Marketing 2026 (N=266) + тренд-анализ Mordor',
+      result:'63% маркетологов используют AI в 2026 (+12 пп за год); AI-видеомонтаж CAGR 32%',
+      refs:[2,5], status:'confirmed' },
+    { h:'H3', txt:'Ценник pay-per-use 45–95 ₽/мин конкурентоспособен против подписок конкурентов',
+      method:'Benchmark публичных тарифов Descript / AutoPod / Gling',
+      result:'Descript $24/мес (~2 280 ₽), AutoPod $29/мес (~2 755 ₽), Gling $15/мес (~1 425 ₽)',
+      refs:[9,10,11], status:'confirmed' },
   ];
   return (
     <Slide n={n} total={total} section="07 · Гипотезы" label="Гипотезы и проверка">
       <div className="eyebrow">Что проверяли и как</div>
-      <h2 className="h2" style={{marginTop:10}}>Три ключевые гипотезы — подтверждены CustDev’ом и прайс-тестами</h2>
+      <h2 className="h2" style={{marginTop:10}}>Три ключевые гипотезы — подтверждены через desk-research и benchmark-анализ</h2>
 
       <div style={{marginTop:36}}>
         <table className="tbl">
@@ -18,8 +27,8 @@ function Slide07_Hypothesis({ n, total }) {
             <tr>
               <th style={{width:60}}>#</th>
               <th>Гипотеза</th>
-              <th style={{width:220}}>Метод проверки</th>
-              <th>Результат</th>
+              <th style={{width:260}}>Метод проверки</th>
+              <th>Результат (со ссылками)</th>
               <th style={{width:160}}>Статус</th>
             </tr>
           </thead>
@@ -29,7 +38,7 @@ function Slide07_Hypothesis({ n, total }) {
                 <td><div className="stat" style={{fontSize:20,color:'var(--teal)'}}>{r.h}</div></td>
                 <td style={{fontWeight:500,fontSize:14.5,color:'var(--navy)',lineHeight:1.4}}>{r.txt}</td>
                 <td style={{fontSize:13,color:'var(--ink)',lineHeight:1.5}}>{r.method}</td>
-                <td style={{fontSize:13,color:'var(--ink)',lineHeight:1.5}}>{r.result}</td>
+                <td style={{fontSize:13,color:'var(--ink)',lineHeight:1.5}}>{r.result} <Cite n={r.refs}/></td>
                 <td><span className="chip green"><Icon name="Check" size={12} stroke="#1a6a34"/> Подтверждена</span></td>
               </tr>
             ))}
@@ -39,25 +48,33 @@ function Slide07_Hypothesis({ n, total }) {
 
       <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:18,marginTop:40}}>
         <div className="card-dark">
-          <div className="eyebrow" style={{color:'#7be6e6'}}>Объём CustDev</div>
+          <div className="eyebrow" style={{color:'#7be6e6'}}>Конкурентов разобрано</div>
           <div style={{display:'flex',alignItems:'baseline',gap:12,marginTop:6}}>
-            <div className="stat" style={{fontSize:56,color:'#fff'}}>18</div>
-            <div style={{fontSize:13,opacity:.8}}>глубинных интервью</div>
+            <div className="stat" style={{fontSize:56,color:'#fff'}}>4</div>
+            <div style={{fontSize:13,opacity:.8}}>прямых конкурента</div>
           </div>
-          <div style={{fontSize:12,opacity:.7,marginTop:8,lineHeight:1.5}}>8 блогеров · 5 студий · 3 ТВ-канала · 2 корп. медиа</div>
+          <div style={{fontSize:12,opacity:.7,marginTop:8,lineHeight:1.5}}>Descript · AutoPod · Gling · DaVinci Resolve 20 — тарифы, фичи, позиционирование</div>
         </div>
         <div className="card">
-          <div className="eyebrow">Квант-опрос</div>
-          <div className="stat" style={{fontSize:56,marginTop:6}}>42</div>
-          <div style={{fontSize:12.5,color:'var(--muted)',marginTop:8,lineHeight:1.5}}>Респондентов на форме + демо-реакция на MVP-ролик</div>
+          <div className="eyebrow">Источников в обзоре</div>
+          <div className="stat" style={{fontSize:56,marginTop:6}}>24</div>
+          <div style={{fontSize:12.5,color:'var(--muted)',marginTop:8,lineHeight:1.5}}>Отраслевые отчёты (Wyzowl, Mordor, Grand View, АКАР), arXiv-статьи, hh.ru, документы регулятора</div>
         </div>
         <div className="card">
-          <div className="eyebrow">Price-test</div>
+          <div className="eyebrow">MVP-прогоны</div>
           <div style={{display:'flex',alignItems:'baseline',gap:8,marginTop:6}}>
-            <div className="stat" style={{fontSize:36}}>1 490 ₽</div>
-            <div style={{fontSize:13,color:'var(--muted)'}}>≈ $16 / мес</div>
+            <div className="stat" style={{fontSize:36}}>3 сцены</div>
           </div>
-          <div style={{fontSize:12.5,color:'var(--muted)',marginTop:8,lineHeight:1.5}}>Оптимальная цена по Van Westendorp для B2C-сегмента</div>
+          <div style={{fontSize:12.5,color:'var(--muted)',marginTop:8,lineHeight:1.5}}>Лекция · концерт · подкаст — тест пайплайна face/scene detection на открытых мультикам-записях</div>
+        </div>
+      </div>
+
+      <div className="card-soft" style={{marginTop:20,padding:16}}>
+        <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
+          <div style={{color:'var(--teal)',flexShrink:0,marginTop:2}}><Icon name="Info" size={16} stroke="#007575"/></div>
+          <div style={{fontSize:12.5,lineHeight:1.55,color:'var(--ink)'}}>
+            <b>Методологическая честность.</b> На стадии pre-seed мы опираемся на открытые отраслевые benchmark-и и анализ конкурентов, а не на собственный CustDev. Валидацию с реальными пользователями планируем на этапе closed beta (M2, май 2026, слайд 20) — 3 пилотные студии с замером качества склеек vs. ручной монтаж.
+          </div>
         </div>
       </div>
     </Slide>
@@ -133,13 +150,13 @@ function Slide08_Audience({ n, total }) {
 
 function Slide09_Market({ n, total }) {
   const growth = [
-    { y:'2024', v:1.6 },
-    { y:'2025', v:2.1 },
-    { y:'2026', v:2.9 },
-    { y:'2027', v:4.0 },
-    { y:'2028', v:5.5 },
-    { y:'2029', v:7.3 },
-    { y:'2030', v:9.5 },
+    { y:'2024', v:152 },
+    { y:'2025', v:200 },
+    { y:'2026', v:275 },
+    { y:'2027', v:380 },
+    { y:'2028', v:520 },
+    { y:'2029', v:695 },
+    { y:'2030', v:900 },
   ];
   const regions = [
     { name:'North America', v:34.8, fill:'#0B1F44' },
@@ -156,7 +173,7 @@ function Slide09_Market({ n, total }) {
           <div style={{display:'flex',alignItems:'baseline',justifyContent:'space-between'}}>
             <div>
               <div className="eyebrow">Рост глобального рынка AI-видеомонтажа</div>
-              <div style={{fontSize:14,color:'var(--muted)',marginTop:6}}>$B · прогноз 2024–2030 · CAGR 25–42% <Cite n={[5,6]}/></div>
+              <div style={{fontSize:14,color:'var(--muted)',marginTop:6}}>млрд ₽ · прогноз 2024–2030 · CAGR 25–42% <Cite n={[5,6]}/></div>
             </div>
             <div className="chip teal">CAGR 32%</div>
           </div>
@@ -171,16 +188,16 @@ function Slide09_Market({ n, total }) {
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" vertical={false}/>
                 <XAxis dataKey="y" stroke="#6B7280" fontSize={12}/>
-                <YAxis stroke="#6B7280" fontSize={12} tickFormatter={(v)=>`$${v}B`}/>
-                <Tooltip formatter={(v)=>[`$${v}B`,'Размер рынка']} contentStyle={{borderRadius:8,border:'1px solid #E5E7EB',fontSize:12}}/>
+                <YAxis stroke="#6B7280" fontSize={12} tickFormatter={(v)=>`${v}`}/>
+                <Tooltip formatter={(v)=>[`${v} млрд ₽`,'Размер рынка']} contentStyle={{borderRadius:8,border:'1px solid #E5E7EB',fontSize:12}}/>
                 <Area type="monotone" dataKey="v" stroke="#00A8A8" strokeWidth={2.4} fill="url(#mg)"/>
               </AreaChart>
             </ResponsiveContainer>
           </div>
           <div style={{display:'flex',gap:24,marginTop:14,padding:'12px 14px',background:'#F7F9FD',borderRadius:10}}>
-            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>2025</div><div className="stat" style={{fontSize:20}}>$2.1B</div></div>
-            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>2030 (прогноз)</div><div className="stat" style={{fontSize:20,color:'var(--teal)'}}>$9–10B</div></div>
-            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>Рынок ПО для монтажа</div><div className="stat" style={{fontSize:20}}>$3.5B → $5B <Cite n={7}/></div></div>
+            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>2025</div><div className="stat" style={{fontSize:20}}>200 млрд ₽</div></div>
+            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>2030 (прогноз)</div><div className="stat" style={{fontSize:20,color:'var(--teal)'}}>850–950 млрд ₽</div></div>
+            <div><div className="font-mono" style={{fontSize:11,color:'var(--muted)'}}>Рынок ПО для монтажа</div><div className="stat" style={{fontSize:20}}>330 → 475 млрд ₽ <Cite n={7}/></div></div>
           </div>
         </div>
 
@@ -266,7 +283,7 @@ function Slide10_TAMSOM({ n, total }) {
               </div>
             </div>
           ))}
-          <div className="font-mono" style={{fontSize:11,color:'var(--muted)',marginTop:6,paddingLeft:6}}>Конвертация по курсу 95 ₽/$ на апрель 2026. Оценка ниши мультикамерного монтажа — авторская, на базе структуры рынка AI-видеомонтажа.</div>
+          <div className="font-mono" style={{fontSize:11,color:'var(--muted)',marginTop:6,paddingLeft:6}}>Оценки в ₽ на апрель 2026, пересчёт из глобальных отчётов AI-видеомонтажа по курсу ЦБ РФ <Cite n={17}/>. Ниша мультикамерного монтажа — авторская оценка на базе структуры рынка.</div>
         </div>
       </div>
     </Slide>
